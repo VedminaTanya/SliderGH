@@ -1,7 +1,10 @@
-(function() {
+(function(exports) {
 
-	var fld = document.querySelector('ul#mySlider');
-	var img = document.getElementsByClassName('active');
+	var fld = document.querySelector('#mySlider');
+	console.log(fld);
+
+	var img = document.querySelector('ul#mySlider>li.active>img');
+	console.log(img);
 	//document.querySelector('ul#mySlider>li.active>img');
 
 	function coderField(field, image){
@@ -11,7 +14,11 @@
 	// getComputedStyle не работает в IE8
 
 	function getStyle(elem){
-		return window.getComputedStyle ? getComputedStyle(elem, "") : elem.currentStyle;
+		if (window.getComputedStyle){
+			return getComputedStyle(elem, "");
+		} else { 
+			return elem.currentStyle;
+		}
 	}
 	
 	var heightField = getStyle(field).height;
@@ -20,7 +27,7 @@
 	field.style.overflow = "hidden";
 	var kField = parseInt(heightField) / parseInt(widthField);
 
-	alert(image.length);
+	//alert(image);
 	image.style.position = "absolute";
 	var imgHeightReal = image.height;
 	var imgWidthReal = image.width;
@@ -48,7 +55,15 @@
 		image.style.top = - differenceForMiddle + "px";
 		};
 }
+exports.coderField = function() {
+	var img = document.querySelector('ul#mySlider>li.active>img');
+	coderField(fld, img);
+
+};
 coderField(fld, img);
+// setInterval(function() {
+// 			window.coderField();
+// 		}, 1);
 //Заморочка с флагами из-за того что браузерное событие onresize  
 //2 раза вызывает действие, на которое подписано. Это баг.
 	var flag = true;
@@ -67,5 +82,5 @@ coderField(fld, img);
 	}
 	
 	
-})();
+})(window);
 	

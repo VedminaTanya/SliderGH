@@ -214,58 +214,7 @@ directionLeft.onclick = drLeft;
 directionRight.onclick = drRight;
 directionRandom.onclick = drRandom;
 
-// //Используем кусок (функция coderField) кода из библиотеки для маштабирования изображения с
-// //с сохранением пропорций так, чтобы его ширина или высота равнялась
-// //ширине или высоте блока. Аналог в css backgraund-size значение cover,
-// //но тогда img задается backgraund_ом в css.
-// function coderField(){
-
-// 	var field = document.querySelector('ul#mySlider');
-	
-// 	//Кросс-браузерный код для получения стиля из css. Функция getStyle. 
-// 	// getComputedStyle не работает в IE8
-
-// 	function getStyle(elem){
-// 		return window.getComputedStyle ? getComputedStyle(elem, "") : elem.currentStyle;
-// 	}
-	
-// 	var heightField = getStyle(field).height;
-// 	var widthField = getStyle(field).width;
-// 	field.style.position = "relative";
-// 	field.style.overflow = "hidden";
-// 	var kField = parseInt(heightField) / parseInt(widthField);
-
-	
-// 	var img = document.querySelector('ul#mySlider>li.active>img');
-
-// 	img.style.position = "absolute";
-// 	var imgHeightReal = img.height;
-// 	var imgWidthReal = img.width;
-// 	var kImg = img.height / img.width;
-
-
-// //Сравниваем коэффициенты картинки и поля для определения чего именно 
-// //будем брать за 100%
-// 	if (kImg <= kField){
-// 		img.style.height = "100%";
-// 		img.style.width = "auto";
-// 		var imgHeightNew = img.height;
-// 		var imgWidthNew = img.width;
-
-// 		var differenceForMiddle = (imgWidthNew - parseInt(widthField)) / 2;
-// 		img.style.left = - differenceForMiddle + "px";
-				
-// 	}
-// 	else{
-// 		img.style.height = "auto";
-// 		img.style.width = "100%";
-// 		imgHeightNew = img.height;
-// 		imgWidthNew = img.width;
-// 		var differenceForMiddle = (imgHeightNew - parseInt(heightField)) / 2;
-// 		img.style.top = - differenceForMiddle + "px";
-// 		};
-// }
-
+//  
 
 //timeOfInterval - интервал между сладами
 //allTime - общее время показа слайдов
