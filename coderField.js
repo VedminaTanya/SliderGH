@@ -55,15 +55,28 @@
 		image.style.top = - differenceForMiddle + "px";
 		};
 }
-exports.coderField = function() {
-	var img = document.querySelector('ul#mySlider>li.active>img');
-	coderField(fld, img);
+// exports.coderField = function() {
+// 	var img = document.querySelector('ul#mySlider>li.active>img');
+// 	coderField(fld, img);
 
-};
-coderField(fld, img);
+// };
+// coderField(fld, img);
+
 // setInterval(function() {
-// 			window.coderField();
-// 		}, 1);
+// 	var img = document.querySelector('ul#mySlider>li.active>img');
+// 		coderField(fld, img);
+// 	}, 60);
+
+
+setInterval(function() {
+	if (document.querySelector('ul#mySlider>li.active>img')) {
+		//var fld = document.getElementById('mySlider');
+		var img = document.querySelector('ul#mySlider>li.active>img');
+		coderField(fld, img);
+	}
+}, 120);
+
+
 //Заморочка с флагами из-за того что браузерное событие onresize  
 //2 раза вызывает действие, на которое подписано. Это баг.
 	var flag = true;
@@ -83,4 +96,3 @@ coderField(fld, img);
 	
 	
 })(window);
-	

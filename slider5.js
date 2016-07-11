@@ -8,6 +8,7 @@ var numberOfPosition,
 	interval,
 	time,
 	intervalID,
+	animation,
 	array = [],
 	slides = document.querySelectorAll('ul#mySlider>li'),
 	listOfSlides = document.querySelector('ul#mySlider'),
@@ -51,7 +52,7 @@ var itemsMenu = ["color", "animation", "direction"],
 				],
 	idMenu = [
 				[, "colorPink", "colorBlue", "colorGreen", "colorWhite", "colorBlack"],
-				[, , , ],
+				[, "withoutAnimation", "disappearation", "movingLeft"],
 				[, "directionLeft", "directionRight", "directionRandom"]
 	];
 
@@ -74,18 +75,25 @@ for (var i = 0; i < itemsMenu.length; i++) {
 
 //Функционал слайдера 
 
-var slider = (function (slds, btns, arr){
+var slider = (function (slds, btns, arr, anim){
 	return {
 	
 	currentSlide:0, // текущий кадр для отбражения - индекс картинки из коллекции
 	set: function(image, button) { // установка текущего слайд слайдеру
 		for( var i = 0; i < slds.length; i++){
 					slds[i].classList.remove("active");
+					if(animation == "opacity" || animation == "moveLeft"){
+						slds[i].classList.remove("opacityAnimate");
+						slds[i].classList.remove("moveLeftAnimate");
+					} 
+					
 					btns[i].classList.remove("active");
 				}
 				
-				image.className = "active";
-				button.className = "active";
+				image.classList.add("active");
+				if(animation == "opacity") image.classList.add("opacityAnimate");
+				if(animation == "moveLeft")image.classList.add("moveLeftAnimate");
+				button.classList.add("active");
 	},
 	init: function() { // запуск слайда с нулевым индексом
 		this.currentSlide = 0;
@@ -127,7 +135,7 @@ var slider = (function (slds, btns, arr){
 	
 	}
 };
-})(slides, buttons, array);
+})(slides, buttons, array, animation);
 
 
 
@@ -214,6 +222,27 @@ directionLeft.onclick = drLeft;
 directionRight.onclick = drRight;
 directionRandom.onclick = drRandom;
 
+//Обработчики для анимации
+
+function setAnimation(anima){
+	animation = anima;
+
+}
+var animaDisappearation = function(){
+		setAnimation("opacity");
+	},
+	animaWithout = function(){
+		setAnimation("undefined");
+	},
+	animaMoveLeft =function(){
+		setAnimation("moveLeft");
+	}
+
+
+disappearation.onclick = animaDisappearation;
+withoutAnimation.onclick = animaWithout;
+movingLeft.onclick = animaMoveLeft;
+
 //  
 
 //timeOfInterval - интервал между сладами
@@ -230,7 +259,6 @@ function sliderTanya(timeOfInterval, allTime, direction){
 		if(direction == "right") slider.right();
 		if(direction == "left") slider.left();
 		if(direction == "random") slider.random();
-		//coderField();
 	},timeOfInterval);
 	setTimeout(function(){
 		clearInterval(intervalID);

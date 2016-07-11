@@ -258,3 +258,56 @@ background: linear-gradient(#000000, #C0C0C0);
 	background:url(images/direction.png) center no-repeat;
 	
 }
+
+@keyframes opacityAnimation{
+	from{
+		opacity: 1;
+	}
+	to{
+		opacity: 0;
+	}
+}
+
+@-webkit-keyframes opacityAnimation{
+	from{
+		opacity: 1;
+	}
+	to{
+		opacity: 0;
+	}
+}
+.opacityAnimate{
+	
+	-webkit-animation: opacityAnimation 5s;
+	-o-animation: opacityAnimation 5s;
+	animation: opacityAnimation 5s;
+	
+}
+
+
+@keyframes moveLeftAnimation{
+	from{
+		left: 30px;
+	}
+	to{
+		left: -570px;
+	}
+}
+
+@-webkit-keyframes moveLeftAnimation{
+	from{
+		left: 30px;
+	}
+	to{
+		left: -570px;
+	}
+}
+.moveLeftAnimate{
+	
+	-webkit-animation: moveLeftAnimation 5s;
+	-o-animation: moveLeftAnimation 5s;
+	animation: moveLeftAnimation 5s;
+	
+}
+
+
