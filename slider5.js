@@ -195,7 +195,7 @@
 	 	setColor("colorBlue", "BlueLA", "BlueRA");
 	 	},
 	 	pink = function(){
-	 	setColor("colorPink", "", "");
+	 	setColor("colorPink", "PinkLA", "PinkRA");
 	 	},
 	 	green = function(){
 	 	setColor("colorGreen", "GreenLA", "GreenRA");
@@ -282,7 +282,7 @@
 
 	window.onload = function() { // запуск слайдера после загрузки документа
 
-	sliderTanya(2000, 20000, "random");
+	sliderTanya(2000, 50000, "right");
 		
 		
 	};//закрываем window.onload

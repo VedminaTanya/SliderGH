@@ -1,8 +1,8 @@
 .wrapper{
 	
-background: -webkit-linear-gradient(#FFC0CB, #C0C0C0);
-background: -o-linear-gradient(#FFC0CB, #C0C0C0);
-background: linear-gradient(#FFC0CB, #C0C0C0);
+background: -webkit-linear-gradient(#ffffff, #C0C0C0);
+background: -o-linear-gradient(#ffffff, #C0C0C0);
+background: linear-gradient(#ffffff, #C0C0C0);
 	height:400px;
 	margin:auto;
 	position:relative;
@@ -75,7 +75,7 @@ background: linear-gradient(#000000, #C0C0C0);
 }
 
 .arrowLeft:hover{
-	background-image:url(images/arrowLeftPink.png);
+	background-image:url(images/arrowLeft1.png);
 }
 
 #BlueLA:hover{
@@ -90,6 +90,10 @@ background: linear-gradient(#000000, #C0C0C0);
 	background-image:url(images/arrowLeft1.png);
 }
 
+#PinkLA:hover{
+	background-image:url(images/arrowLeftPink.png);
+}
+
 .arrowRight{
 	background-image:url(images/arrowRight1.png);
 	height:34px;
@@ -101,7 +105,7 @@ background: linear-gradient(#000000, #C0C0C0);
 }
 
 .arrowRight:hover{
-	background-image:url(images/arrowRightPink.png);
+	background-image:url(images/arrowRight1.png);
 }
 
 #WhiteBlackRA:hover{
@@ -114,6 +118,10 @@ background: linear-gradient(#000000, #C0C0C0);
 
 #GreenRA:hover{
 	background-image:url(images/arrowRightGreen.png);
+}
+
+#PinkRA:hover{
+	background-image:url(images/arrowRightPink.png);
 }
 
 .panelForButtons{
@@ -274,9 +282,9 @@ background: linear-gradient(#000000, #C0C0C0);
 }
 .opacityAnimate{
 	
-	-webkit-animation: opacityAnimation 5s;
-	-o-animation: opacityAnimation 5s;
-	animation: opacityAnimation 5s;
+	-webkit-animation: opacityAnimation 2s linear .5s;
+	-o-animation: opacityAnimation 2s linear .5s;
+	animation: opacityAnimation 2s linear .5s;
 	
 }
 
@@ -304,9 +312,9 @@ background: linear-gradient(#000000, #C0C0C0);
 }
 
 .moveLeftAnimate{
-	-webkit-animation: moveLeftAnimation 5s;
-	-o-animation: moveLeftAnimation 5s;
-	animation: moveLeftAnimation 5s;
+	-webkit-animation: moveLeftAnimation 2s linear .7s;
+	-o-animation: moveLeftAnimation 2s linear .7s;
+	animation: moveLeftAnimation 2s linear .7s;
 }
 
 
