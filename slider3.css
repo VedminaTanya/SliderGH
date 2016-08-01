@@ -52,6 +52,13 @@ background: linear-gradient(#000000, #C0C0C0);
 	overflow:hidden;
 } 
 
+/*@media screen and (max-width:321px){
+	#mySlider{
+	height: 100px;
+	width: 120px;
+	
+}*/
+
 #mySlider li{
 	display:none;
 }

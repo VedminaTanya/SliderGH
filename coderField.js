@@ -16,7 +16,7 @@
 		var heightField = getStyle(field).height,
 			widthField = getStyle(field).width;
 
-		function coderFieldBase(){
+		(function coderFieldBase(){
 
 			field.style.position = "relative";
 			field.style.overflow = "hidden";
@@ -44,10 +44,10 @@
 				var differenceForMiddle = (parseInt(imgHeightNew) - parseInt(heightField)) / 2;
 				image.style.top = - differenceForMiddle + "px";
 			};
-		}
+		})();
 
 //init
-		coderFieldBase();
+		//coderFieldBase();
 
 		//Заморочка с флагами из-за того что браузерное событие onresize  
 		//2 раза вызывает действие, на которое подписано. Это баг.
